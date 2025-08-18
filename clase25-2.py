@@ -101,3 +101,26 @@ class Dealership:
         for vehicle in self.inventory:
             if vehicle.check_available():
                 print(f"- {vehicle.brand} por {vehicle.get_price()}")
+
+car1 = Car("Toyota" , "Corolla" , 20000)
+bike1 = Bike("Yamaha" , "MT-07" , 7000)
+truck1 = Truck("Volvo", "FH16", 80000)
+
+customer1 = Customer("Carlos")
+
+dealership = Dealership()
+dealership.add_vehicles(car1)
+dealership.add_vehicles(bike1)
+dealership.add_vehicles(truck1)
+
+#Mostrar Vehiclos Disponibles
+dealership.show_available_vehicle()
+
+#Cliente consultar un vehiculo
+customer1.inquire_vehicle(car1)
+
+#Cliente comprar un vehiculo
+customer1.buy_vehicle(car1)
+
+#Mostrar vehiculos disponibles
+dealership.show_available_vehicle()
